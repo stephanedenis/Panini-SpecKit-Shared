@@ -1,0 +1,43 @@
+# Règles de qualité pour les Pull Requests
+pull_requests:
+  size:
+    max_files_changed: 15
+    max_lines_changed: 500
+    recommended_files: 5
+    
+  requirements:
+    title:
+      format: conventional_commits
+      max_length: 72
+      
+    description:
+      require: true
+      min_length: 50
+      sections:
+        - "## Changements"
+        - "## Tests"
+        - "## Documentation"
+        
+    checks:
+      build: required
+      tests: required
+      lint: required
+      type_check: optional
+      
+  review:
+    min_reviewers: 1
+    require_approval: true
+    dismiss_stale_reviews: true
+    
+  merge:
+    strategy: squash
+    delete_branch: true
+    
+  labels:
+    auto_assign: true
+    categories:
+      - bug
+      - enhancement
+      - documentation
+      - refactor
+      - dependencies

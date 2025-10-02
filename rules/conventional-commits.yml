@@ -1,0 +1,29 @@
+# Règles partagées pour Conventional Commits
+conventional_commits:
+  enabled: true
+  types:
+    - feat       # nouvelle fonctionnalité
+    - fix        # correction de bug
+    - docs       # documentation
+    - style      # formatage, points-virgules manquants, etc.
+    - refactor   # refactoring (ni feat ni fix)
+    - test       # ajout/modification tests
+    - chore      # tâches de maintenance
+    - perf       # amélioration performance
+    - ci         # changements CI/CD
+    - build      # changements système de build
+    - revert     # annulation commit précédent
+
+  scopes:
+    common: [core, api, ui, docs, test, build, ci, deps]
+    
+  format:
+    max_length: 72
+    require_scope: false
+    require_description: true
+    
+  examples:
+    - "feat(api): add user authentication endpoint"
+    - "fix: resolve memory leak in data processing"
+    - "docs: update installation guide"
+    - "chore(deps): bump lodash from 4.17.20 to 4.17.21"

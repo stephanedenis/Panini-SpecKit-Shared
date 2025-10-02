@@ -1,0 +1,45 @@
+# Standards de code partagés
+code_standards:
+  language_defaults:
+    python:
+      formatter: black
+      linter: ruff
+      type_checker: mypy
+      max_line_length: 88
+      
+    typescript:
+      formatter: prettier
+      linter: eslint
+      type_checker: tsc
+      max_line_length: 100
+      
+    javascript:
+      formatter: prettier
+      linter: eslint
+      max_line_length: 100
+      
+  comments:
+    language: fr
+    style: concise
+    require_for:
+      - public_functions
+      - complex_logic
+      - workarounds
+      
+  naming:
+    style: descriptive
+    conventions:
+      functions: snake_case
+      variables: snake_case
+      constants: UPPER_CASE
+      classes: PascalCase
+      
+  documentation:
+    readme: required
+    changelog: required
+    api_docs: auto_generate
+    
+  testing:
+    coverage_minimum: 70
+    unit_tests: required
+    integration_tests: recommended
